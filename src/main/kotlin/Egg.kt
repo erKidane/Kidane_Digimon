@@ -2,8 +2,10 @@ open class Egg(name:String, var hatch:Int):Item(name){
 
 
 
-    fun getPet(person:Player){
+    fun getPet(person:Player) {
         hatch++
+        println("hatchtimer: $hatch")
+
     }
 
 

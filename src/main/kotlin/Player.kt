@@ -6,6 +6,7 @@ class Player(
 
 
 
+
     constructor(name:String, inventar:MutableList<Item>,digivice: Boolean,partner:Digimon):this(name,inventar, digivice) {
 
 
@@ -23,8 +24,8 @@ class Player(
 
     }
 
-    fun startBattle() {
-        println("ich zähle auf dich ${partner.name}.")
+    fun startBattle(d:Digimon) {
+        println("ich zähle auf dich ${d.name}.")
     }
 
 

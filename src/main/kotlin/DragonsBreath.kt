@@ -1,6 +1,7 @@
 class DragonsBreath:Item("DragonsBreath") {
 
-    fun dragonsBreath(digimon: Digimon) {
+
+    fun useDragonsBreath(digimon: Digimon) {
         digimon.attacken + 10
     }
 }
