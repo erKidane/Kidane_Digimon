@@ -2,7 +2,7 @@ package alleAttacken
 
 import Digimon
 
-class Gefluester: Attack("Gefluester",30) {
+class Gefluester: Attack("Gefluester",40) {
     override fun use(target: Any) {
         if (target is Digimon) {
 

@@ -20,16 +20,23 @@ class Evildigimon (
     }
 
     fun loot(spieler:Player) {
-        if(this.hp == 0) {
-            lootItems.removeAll(lootItems)
-            spieler.inventar.addAll(lootItems)
+        if(this.hp <= 0) {
+           for(i in lootItems) {
+               lootItems.remove(i)
+               spieler.inventar.add(i)
+           }
+
         }
     }
 
     fun bossAttack(index:Int,target:Digimon){
-        val attack = attacken[index]
-        println("$name setzt ${attacken[index]} ein")
-        attack.use(target)
+        if(this.hp > 0) {
+            val attack = attacken[index]
+            println("$name setzt ${attacken[index]} ein")
+            attack.use(target)
+        }else if(this.hp < 0){
+            println("$name: aaaa ich habeee verloooren!")
+        }
     }
 
     fun showHp() {

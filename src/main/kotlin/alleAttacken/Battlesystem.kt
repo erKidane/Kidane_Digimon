@@ -2,10 +2,9 @@ package alleAttacken
 import Digimon
 import Evildigimon
 import Player
-import Item
 
 
-open class Battlesystem(var p1:Player, var digimon:Digimon, var boss:Evildigimon ) {
+open class Battlesystem(var p1:Player, var digimon:Digimon, var boss:Evildigimon, var evolvedBoss:Evildigimon, var evolvedDigimon:Digimon) {
 
 
 
@@ -14,7 +13,7 @@ open class Battlesystem(var p1:Player, var digimon:Digimon, var boss:Evildigimon
         if(boss.spawn) {
             println("Ein wildes ${boss.name} ist aufgetaucht!!")
             p1.startBattle(digimon)
-            do {
+            while (boss.hp > 0){
                 println("Welche attacke soll dein ${digimon.name} benutzen?")
                 Thread.sleep(1000)
                 println("${digimon.name} beherrscht ${digimon.attacken.first()} & ${digimon.attacken.last()}")
@@ -29,9 +28,18 @@ open class Battlesystem(var p1:Player, var digimon:Digimon, var boss:Evildigimon
                 Thread.sleep(1000)
                 boss.bossAttack(bossIndexAttacken, digimon)
                 digimon.showHp()
+                if (boss.hp <= 20) {
+                    boss.evilEvolve(evolvedBoss)
+                    boss = evolvedBoss
+                }
+                if(digimon.hp <= 20) {
+                    digimon.powerOfFriendschip(p1, digimon, evolvedDigimon)
+                    digimon = evolvedDigimon
+                }
 
 
-            } while (boss.hp < 0)
+
+            }
         }else{
             println("kein böses Digimon gespawnt.")
         }

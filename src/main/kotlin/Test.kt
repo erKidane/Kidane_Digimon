@@ -26,7 +26,7 @@ fun main(){
     var itemLoot = mutableListOf<Item>()
 
     var boss = Evildigimon(100,"Demidevimon",DigiLevels.Rookie,true,demidevimonsAttacken,itemLoot)
-    var boss2 = Evildigimon(400,"Devimon",DigiLevels.Champion,true,dorumonsAttacken,itemLoot)
+    var boss2 = Evildigimon(400,"Devimon",DigiLevels.Champion,true,devimonsAttacken,itemLoot)
 
 
     var d1 = Digimon(100,"Dorumon",DigiLevels.Rookie,dorumonsAttacken)

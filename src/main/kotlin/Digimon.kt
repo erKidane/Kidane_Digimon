@@ -55,7 +55,7 @@ open class Digimon(
     }
 
     fun powerOfFriendschip(spieler:Player,p1:Digimon,p2:Digimon){
-        if(hp<=1) {
+        if(hp<=20) {
             spieler.digivice = true
          println("$name glaubt an ${spieler.name}! Lass uns gemeinsam Digitieren.")
          println("$name und ${spieler.name} digitieren zu ${p2.name}")

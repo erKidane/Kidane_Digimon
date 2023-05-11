@@ -2,7 +2,7 @@ package alleAttacken
 
 import Digimon
 
-open class Giftpfeile: Attack("Giftpfeile",20) {
+open class Giftpfeile: Attack("Giftpfeile",40) {
 
      override fun use(target: Any){
          if(target is Digimon) {
