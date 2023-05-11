@@ -1,3 +1,5 @@
+import alleAttacken.Attack
+
 open class Digimon(
     var hp:Int,
     name:String,
@@ -13,6 +15,7 @@ open class Digimon(
                 DigiLevels.Baby -> {
                     this.stufe = DigiLevels.Rookie
                     this.hp + 50
+                    println("$name digitiert zuuuuun ${next.name}")
 
                 }
 
@@ -25,6 +28,7 @@ open class Digimon(
                 DigiLevels.Champion -> {
                     this.stufe = DigiLevels.Ultra
                     this.hp + 150
+                    println("$name digitiert zuuuuun ${next.name}")
                 }
 
 
@@ -38,7 +42,7 @@ open class Digimon(
     fun useAttack(index:Int,target:Evildigimon){
 
         val attack = attacken[index]
-        println("$name setzt ${attacken[0]} ein")
+        println("$name setzt ${attacken[index]} ein")
         attack.use(target)
     }
 
@@ -50,10 +54,11 @@ open class Digimon(
         println("$name dance!")
     }
 
-    fun powerOfFriendschip(spieler:Player){
-        if(hp<=50) {
+    fun powerOfFriendschip(spieler:Player,p1:Digimon,p2:Digimon){
+        if(hp<=1) {
             spieler.digivice = true
-            ("$name glaubt an ${spieler.name}! Lass es gemeinsam tun.")
+         println("$name glaubt an ${spieler.name}! Lass uns gemeinsam Digitieren.")
+         println("$name und ${spieler.name} digitieren zu ${p2.name}")
             this.stufe = DigiLevels.Mega
             this.hp + 300
         }

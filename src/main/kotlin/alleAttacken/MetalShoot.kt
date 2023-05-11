@@ -1,4 +1,8 @@
-class MetalShoot :Attack("Metal Shoot",10) {
+package alleAttacken
+
+import Evildigimon
+
+class MetalShoot : Attack("Metal Shoot",10) {
     override fun use(target: Any) {
 
         if(target is Evildigimon) {
@@ -7,7 +11,7 @@ class MetalShoot :Attack("Metal Shoot",10) {
             }
 
             println("""  
-               $name hat $power bei ${target.name} verursacht.
+               $name hat $power schaden bei ${target.name} verursacht.
            """.trimIndent())
         }
     }
