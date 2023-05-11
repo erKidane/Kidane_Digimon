@@ -40,7 +40,11 @@ class Evildigimon (
     }
 
     fun showHp() {
-        println("$name hat $hp HP!")
+        println("""
+            ------------------
+            $name hat $hp HP!
+            ------------------
+        """.trimMargin())
     }
 
     fun evilEvolve(next:Evildigimon) {
@@ -49,7 +53,12 @@ class Evildigimon (
             DigiLevels.Baby -> {
                 this.stufe = DigiLevels.Rookie
                 this.hp + 50
-                println("$name digitiert zuuuuun ${next.name}")
+                println("""
+                    ------------------
+                    $name digitiert zuuuuun ${next.name}
+                    ------------------
+                    """
+                    .trimIndent())
             }
 
             DigiLevels.Rookie -> {

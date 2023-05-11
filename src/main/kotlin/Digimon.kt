@@ -47,11 +47,17 @@ open class Digimon(
     }
 
     fun showHp(){
-        println("$name hat $hp HP!")
+        println("""
+            ------------------
+            $name hat $hp HP!
+            ------------------
+        """.trimMargin())
     }
 
     fun dance(){
-        println("$name dance!")
+        println(""""
+            $name dance!
+            """.trimMargin())
     }
 
     fun powerOfFriendschip(spieler:Player,p1:Digimon,p2:Digimon){
